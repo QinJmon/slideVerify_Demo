@@ -1,0 +1,38 @@
+server:
+  port: 8888
+
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/verify_demo?user=mysql&password=mysql&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8
+    hikari:
+      max-lifetime: 600000
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        globally_quoted_identifiers: true
+    open-in-view: false
+
+  flyway:
+    validate-on-migrate: false
+    table: schema_version
+
+  web:
+    locale: zh_CN
+
+  servlet:
+    multipart:
+      max-file-size: 10MB #定义了单个文件的最大允许大小
+      max-request-size: 10MB #定义了整个请求（包括所有文件和其他表单数据）的最大允许大小
+
+AES:
+  encryptionKey: qwsazxcde123qea
